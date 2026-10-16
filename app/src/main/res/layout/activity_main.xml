@@ -27,6 +27,14 @@
             android:textSize="36sp"
             android:textStyle="bold" />
 
+        <ImageView
+            android:id="@+id/image_qr_code"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="20dp"
+            android:contentDescription="QR Code"
+            android:visibility="gone" />
+
         <TextView
             android:id="@+id/text_server_status"
             android:layout_width="wrap_content"
