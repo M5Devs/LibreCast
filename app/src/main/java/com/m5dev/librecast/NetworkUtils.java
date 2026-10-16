@@ -1,4 +1,4 @@
-package org.librecast.receiver;
+package com.m5dev.librecast;
 
 import android.content.Context;
 import android.net.wifi.WifiInfo;

@@ -1,4 +1,4 @@
-package org.librecast.receiver;
+package com.m5dev.librecast;
 
 import android.app.Service;
 import android.content.Context;
@@ -15,10 +15,10 @@ public class ReceiverService extends Service implements LibreCastServer.ServerEv
 
     private static final String TAG = "ReceiverService";
 
-    public static final String ACTION_STATUS_UPDATE = "org.librecast.receiver.ACTION_STATUS_UPDATE";
-    public static final String ACTION_START_SERVER = "org.librecast.receiver.ACTION_START_SERVER";
-    public static final String ACTION_STOP_SERVER = "org.librecast.receiver.ACTION_STOP_SERVER";
-    public static final String ACTION_QUERY_STATUS = "org.librecast.receiver.ACTION_QUERY_STATUS";
+    public static final String ACTION_STATUS_UPDATE = "com.m5dev.librecast.ACTION_STATUS_UPDATE";
+    public static final String ACTION_START_SERVER = "com.m5dev.librecast.ACTION_START_SERVER";
+    public static final String ACTION_STOP_SERVER = "com.m5dev.librecast.ACTION_STOP_SERVER";
+    public static final String ACTION_QUERY_STATUS = "com.m5dev.librecast.ACTION_QUERY_STATUS";
 
     public static final String EXTRA_IS_RUNNING = "extra_is_running";
     public static final String EXTRA_SERVER_IP = "extra_server_ip";

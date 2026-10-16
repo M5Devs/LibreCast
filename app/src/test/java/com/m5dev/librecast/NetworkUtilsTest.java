@@ -1,4 +1,4 @@
-package org.librecast.receiver;
+package com.m5dev.librecast;
 
 import org.junit.Test;
 import static org.junit.Assert.*;

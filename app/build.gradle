@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'org.librecast.receiver'
+    namespace 'com.m5dev.librecast'
     compileSdk 34
 
     defaultConfig {
-        applicationId "org.librecast.receiver"
+        applicationId "com.m5dev.librecast"
         minSdk 19
         targetSdk 34
         versionCode 1

@@ -1,4 +1,4 @@
-package org.librecast.receiver;
+package com.m5dev.librecast;
 
 import org.java_websocket.WebSocket;
 import org.java_websocket.handshake.ClientHandshake;
