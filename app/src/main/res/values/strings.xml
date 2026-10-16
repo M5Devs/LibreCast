@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">LibreCast Receiver</string>
+    <string name="title_librecast">LibreCast Receiver</string>
+    <string name="ip_address_placeholder">IP: 0.0.0.0</string>
+</resources>
