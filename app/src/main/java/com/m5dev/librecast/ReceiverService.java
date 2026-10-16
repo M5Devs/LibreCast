@@ -15,6 +15,10 @@ public class ReceiverService extends Service implements LibreCastServer.ServerEv
 
     private static final String TAG = "ReceiverService";
 
+    public interface VideoChunkListener {
+        void onVideoChunkReceived(ByteBuffer chunk);
+    }
+
     public static final String ACTION_STATUS_UPDATE = "com.m5dev.librecast.ACTION_STATUS_UPDATE";
     public static final String ACTION_START_SERVER = "com.m5dev.librecast.ACTION_START_SERVER";
     public static final String ACTION_STOP_SERVER = "com.m5dev.librecast.ACTION_STOP_SERVER";
@@ -39,10 +43,16 @@ public class ReceiverService extends Service implements LibreCastServer.ServerEv
     private boolean isClientConnected = false;
     private String clientIp = "";
 
+    private volatile VideoChunkListener videoChunkListener;
+
     public class LocalBinder extends Binder {
         public ReceiverService getService() {
             return ReceiverService.this;
         }
+    }
+
+    public void setVideoChunkListener(VideoChunkListener listener) {
+        this.videoChunkListener = listener;
     }
 
     @Override
@@ -202,7 +212,10 @@ public class ReceiverService extends Service implements LibreCastServer.ServerEv
 
     @Override
     public void onVideoChunkReceived(ByteBuffer chunk) {
-        // Raw video chunk received for processing / streaming playback pipeline
+        VideoChunkListener listener = this.videoChunkListener;
+        if (listener != null) {
+            listener.onVideoChunkReceived(chunk);
+        }
     }
 
     @Override
