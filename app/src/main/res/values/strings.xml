@@ -2,4 +2,9 @@
     <string name="app_name">LibreCast Receiver</string>
     <string name="title_librecast">LibreCast Receiver</string>
     <string name="ip_address_placeholder">IP: 0.0.0.0</string>
+    <string name="server_starting">Starting server...</string>
+    <string name="server_stopped">Server stopped</string>
+    <string name="server_ready_format">Ready: ws://%1$s:%2$d</string>
+    <string name="waiting_for_connection">Waiting for connection...</string>
+    <string name="client_connected_format">Client Connected: %1$s</string>
 </resources>

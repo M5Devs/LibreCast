@@ -22,13 +22,22 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/text_ip_address"
+            android:id="@+id/text_server_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/ip_address_placeholder"
+            android:text="@string/server_starting"
             android:textColor="@color/text_secondary"
             android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text_connection_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/waiting_for_connection"
+            android:textColor="@color/text_secondary"
+            android:textSize="18sp" />
 
     </LinearLayout>
 
