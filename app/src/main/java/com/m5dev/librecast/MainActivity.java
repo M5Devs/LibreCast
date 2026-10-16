@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.graphics.Bitmap;
 import android.media.MediaFormat;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -14,6 +15,7 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements SurfaceHolder.Cal
 
     private SurfaceView surfaceView;
     private LinearLayout layoutStatus;
+    private ImageView imageQrCode;
     private TextView textServerStatus;
     private TextView textConnectionStatus;
 
@@ -75,6 +78,7 @@ public class MainActivity extends AppCompatActivity implements SurfaceHolder.Cal
 
         surfaceView = findViewById(R.id.surface_view);
         layoutStatus = findViewById(R.id.layout_status);
+        imageQrCode = findViewById(R.id.image_qr_code);
         textServerStatus = findViewById(R.id.text_server_status);
         textConnectionStatus = findViewById(R.id.text_connection_status);
 
@@ -138,8 +142,20 @@ public class MainActivity extends AppCompatActivity implements SurfaceHolder.Cal
                 serverIp = NetworkUtils.getLocalIpAddress(this);
             }
             textServerStatus.setText(getString(R.string.server_ready_format, serverIp, serverPort));
+
+            if (serverIp != null && !serverIp.isEmpty() && !"0.0.0.0".equals(serverIp)) {
+                String wsUri = "ws://" + serverIp + ":" + serverPort;
+                Bitmap qrBitmap = QRCodeUtils.generateQRCode(wsUri, 250, 250);
+                if (qrBitmap != null && imageQrCode != null) {
+                    imageQrCode.setImageBitmap(qrBitmap);
+                    imageQrCode.setVisibility(View.VISIBLE);
+                }
+            }
         } else {
             textServerStatus.setText(getString(R.string.server_stopped));
+            if (imageQrCode != null) {
+                imageQrCode.setVisibility(View.GONE);
+            }
         }
 
         if (isClientConnected) {
