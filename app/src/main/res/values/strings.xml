@@ -1,10 +1,33 @@
 <resources>
-    <string name="app_name">LibreCast Receiver</string>
-    <string name="title_librecast">LibreCast Receiver</string>
+    <string name="app_name">LibreCast</string>
+    <string name="title_librecast">LibreCast</string>
     <string name="ip_address_placeholder">IP: 0.0.0.0</string>
     <string name="server_starting">Starting server...</string>
     <string name="server_stopped">Server stopped</string>
     <string name="server_ready_format">Ready: ws://%1$s:%2$d</string>
     <string name="waiting_for_connection">Waiting for connection...</string>
     <string name="client_connected_format">Client Connected: %1$s</string>
+
+    <!-- Home Screen -->
+    <string name="home_title">LibreCast</string>
+    <string name="home_subtitle">Unified Wireless Screen Sharing</string>
+    <string name="btn_receive">استقبال\nReceive</string>
+    <string name="btn_send">إرسال\nSend</string>
+
+    <!-- Sender Screen -->
+    <string name="sender_title">LibreCast Sender</string>
+    <string name="target_address_hint">Target TV Address (e.g. ws://192.168.1. :8080)</string>
+    <string name="default_target_address">ws://192.168.1. :8080</string>
+    <string name="btn_scan_qr">Scan TV QR</string>
+    <string name="btn_start_cast">Start Cast</string>
+    <string name="btn_stop_cast">Stop Cast</string>
+
+    <!-- Dialogs & Alerts -->
+    <string name="unsupported_version_title">Android Version Unsupported</string>
+    <string name="unsupported_version_message">Screen casting requires Android 5.0 (Lollipop) or higher.</string>
+    <string name="btn_ok">OK</string>
+    <string name="invalid_address">Please enter a valid target WebSocket address (e.g. ws://192.168.1.10:8080)</string>
+    <string name="camera_permission_required">Camera permission is required to scan QR code.</string>
+    <string name="casting_active">Casting in progress...</string>
+    <string name="casting_stopped">Cast stopped.</string>
 </resources>
